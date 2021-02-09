@@ -8803,24 +8803,29 @@ var loginForm = document.querySelector('.form__login');
 var signupForm = document.querySelector('.form__signup');
 var cancelBtn = document.querySelector('.section__login--span');
 var tourHeader = document.querySelector('.tour__header');
-var homePage = document.querySelector('.home-header');
 var mapbox = document.getElementById('map');
 var book = document.querySelector('.bookNow__btn');
 
-if (homePage) {
+if (signupBtn) {
   // SIGNUP FORM
   signupBtn.addEventListener('click', function (e) {
     e.preventDefault();
     sectionLogin.classList.remove('hidden');
     signupForm.classList.remove('hidden');
-  }); // CANCEL BUTTON
+  });
+}
 
+if (cancelBtn) {
+  // CANCEL BUTTON
   cancelBtn.addEventListener('click', function (e) {
     sectionLogin.classList.add('hidden');
     signupForm.classList.add('hidden');
     loginForm.classList.add('hidden');
-  }); // LOGIN FORM
+  });
+}
 
+if (loginBtn) {
+  // LOGIN FORM
   loginBtn.addEventListener('click', function (e) {
     e.preventDefault();
     sectionLogin.classList.remove('hidden');

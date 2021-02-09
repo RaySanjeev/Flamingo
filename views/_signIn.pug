@@ -1,0 +1,24 @@
+section.section__login.hidden
+  span.section__login--span &times;
+  .login__grid
+    .form
+      form.form__login(action='/login' method='POST').hidden
+        h2.mb-medium.form__login--heading start booking now!
+        input#login__email.form__login--email.form__login--input(type='email' placeholder='Your Email' required name='email')
+        label.form__login--label(for='login__email') Your Email
+        input#login__password.form__login--password.form__login--input(type='password' placeholder='Your Password' required name='password')
+        label.form__login--label(for='login__password') Your Password
+        input.form__login--btn-1(type='submit' value='Login' method='POST')
+
+      form.form__signup(action='/signup', method='POST').hidden
+        h2.signup__heading.ml-medium.form__login--heading start booking now!
+        input#name.form__login--input.signup__input(type='text' placeholder='Your Name' required name='name')
+        label.form__login--label.signup__label(for='name') Your Name
+        input#signup__email.form__login--input.signup__input(type='email' placeholder='Your Email' required name='email')
+        label.form__login--label.signup__label(for='signup-email') Email
+        input#signup__password.form__login--password.form__login--input.signup__input(type='password' placeholder='Your Password' required name='password')
+        label.form__login--label.signup__label(for='signup__password') Your Password
+        input#signup__passwordConfirm.form__login--password.form__login--input.signup__input(type='password' placeholder='Confirm Password' required name='passwordConfirm')
+        label.form__login--label.signup__label(for='signup__passwordConfirm') Confirm Password
+        input.form__login--btn-2(type='submit' value='Sign Up') 
+    //- .form__image

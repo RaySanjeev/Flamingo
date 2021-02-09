@@ -1,0 +1,46 @@
+.card(data-tour-id = `${tour._id}`)
+  .card__side.card__side--front.card__side--front-1
+    img.card__image(src = `/img/combine/${tour.imageCover}`)
+    //- .card__image.card__image-1 &nbsp;
+    h3.card__heading
+      - const firstName = tour.name.split(' ').slice(0, 2).join(' ');
+      - const lastName = tour.name.split(' ')[2];
+      span.card__heading-primary.card__heading-1 #{firstName}
+      span.card__heading-secondary.card__heading-1 #{lastName}
+    .card__details.card__details--tours
+      h4.card__details--heading.mb-small=`${tour.difficulty} ${tour.duration} day tour`
+      p.card__details--para.mb-medium
+        | #{tour.summary}
+      .card__details--feature
+        .card__details--block.mb-small
+          svg.card__details--block-svg
+            use(xlink:href='img/sprite.svg#icon-location')
+          p.card__details--block-para #{tour.startLocation.description}
+        .card__details--block.mb-small
+          svg.card__details--block-svg
+            use(xlink:href='img/sprite.svg#icon-calendar')
+          -const options = { year: 'numeric', month: 'long' };
+          -const date = tour.startDates[0].toLocaleDateString('en-US', options)
+          p.card__details--block-para #{date}
+        .card__details--block.mb-small
+          svg.card__details--block-svg
+            use(xlink:href='img/sprite.svg#icon-flag')
+          - const stops = tour.locations.length
+          p.card__details--block-para=`${stops} stops`
+        .card__details--block.mb-small
+          svg.card__details--block-svg
+            use(xlink:href='img/sprite.svg#icon-user')
+          p.card__details--block-para=`${tour.maxGroupSize} People`
+      .card__bookNow
+        .card__bookNow--starRating
+          - const stars = [1, 2, 3, 4, 5]
+          each star in stars 
+            svg(class = `card__bookNow--starRating-${tour.ratingsAverage >= star ? 'full' : 'null'}`)
+              use(xlink:href='img/sprite.svg#icon-star-full')
+        p.card__bookNow--rating #{tour.ratingsAverage} rating &nbsp;
+        p.card__bookNow--ratingsNum=`(${tour.ratingsQuantity})`
+  .card__side.card__side--back.card__side--back-1
+    p.card__side--back-para.card__side--back-para-1 Only!
+    h1.card__side--back-heading &#8377;#{tour.price}
+    p.card__side--back-para.card__side--back-para-2 Per Person.
+    a.card__side--back-btn.card__side--back-btn-1.btn(href=`/tours/${tour.slug}`) More Details

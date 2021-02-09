@@ -63,79 +63,9 @@ block content
     section.section__tours
       h2.section__tours--heading.mb-large.mt-large most popular tours
       .tours__grid
-        .card
-          .card__side.card__side--front.card__side--front-1
-            .card__image.card__image-1 &nbsp;
-            h3.card__heading
-              span.card__heading-primary.card__heading-1 the sea
-              span.card__heading-secondary.card__heading-1 explorer
-            .card__details
-              ul.card__details-block
-                li.card__details-list 3 day tour
-                li.card__details-list upto 30 people
-                li.card__details-list 2 tour guides
-                li.card__details-list sleep in cozy hostels
-                li.card__details-list Difficulty: Easy
-          .card__side.card__side--back.card__side--back-1
-            p.card__side--back-para Only!
-            h1.card__side--back-heading $297
-            a.card__side--back-btn.card__side--back-btn-1.btn(href='#') Book Now
-        .card
-          .card__side.card__side--front.card__side--front-1
-            .card__image.card__image-2 &nbsp;
-            h3.card__heading
-              span.card__heading-primary.card__heading-2 the forest
-              span.card__heading-secondary.card__heading-2 hiker
-            .card__details
-              ul.card__details-block
-                li.card__details-list 7 day tour
-                li.card__details-list upto 40 people
-                li.card__details-list 6 tour guides
-                li.card__details-list sleep in provided tents
-                li.card__details-list Difficulty: Medium
-          .card__side.card__side--back.card__side--back-2
-            p.card__side--back-para Only!
-            h1.card__side--back-heading $497
-            a.card__side--back-btn.card__side--back-btn-2.btn(href='#') Book Now
-        .card
-          .card__side.card__side--front.card__side--front-1
-            .card__image.card__image-3 &nbsp;
-            h3.card__heading
-              span.card__heading-primary.card__heading-3 the snow
-              span.card__heading-secondary.card__heading-3 adventurer
-            .card__details
-              ul.card__details-block
-                li.card__details-list 5 day tour
-                li.card__details-list upto 15 people
-                li.card__details-list 3 tour guides
-                li.card__details-list sleep in provided tents
-                li.card__details-list Difficulty: Hard
-          .card__side.card__side--back.card__side--back-3
-            p.card__side--back-para Only!
-            h1.card__side--back-heading $897
-            a.card__side--back-btn.card__side--back-btn-3.btn(href='#') Book Now
-      a.section__tours-btn.btn(href='/tours') Discover our tours
-    section.section__login.hidden
-      span.section__login--span &times;
-      .login__grid
-        .form
-          form.form__login(action='/login' method='POST').hidden
-            h2.mb-medium.form__login--heading start booking now!
-            input#login__email.form__login--email.form__login--input(type='email' placeholder='Your Email' required name='email')
-            label.form__login--label(for='login__email') Your Email
-            input#login__password.form__login--password.form__login--input(type='password' placeholder='Your Password' required name='password')
-            label.form__login--label(for='login__password') Your Password
-            input.form__login--btn-1(type='submit' value='Login' method='POST')
+        each tour in tours
+          include _card
 
-          form.form__signup(action='/signup', method='POST').hidden
-            h2.signup__heading.ml-medium.form__login--heading start booking now!
-            input#name.form__login--input.signup__input(type='text' placeholder='Your Name' required name='name')
-            label.form__login--label.signup__label(for='name') Your Name
-            input#signup__email.form__login--input.signup__input(type='email' placeholder='Your Email' required name='email')
-            label.form__login--label.signup__label(for='signup-email') Email
-            input#signup__password.form__login--password.form__login--input.signup__input(type='password' placeholder='Your Password' required name='password')
-            label.form__login--label.signup__label(for='signup__password') Your Password
-            input#signup__passwordConfirm.form__login--password.form__login--input.signup__input(type='password' placeholder='Confirm Password' required name='passwordConfirm')
-            label.form__login--label.signup__label(for='signup__passwordConfirm') Confirm Password
-            input.form__login--btn-2(type='submit' value='Sign Up') 
-        .form__image
+      a.section__tours-btn.btn(href='/tours') Discover our tours
+    include _signIn
+    

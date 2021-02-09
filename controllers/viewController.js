@@ -8,10 +8,14 @@ exports.renderHomePage = catchAsync(async (req, res, next) => {
     if (res.locals) user = res.locals.user;
   }
 
-  console.log(user);
+  const tours = await Tour.find()
+    .sort({ ratingsAverage: -1, ratingsQuantity: -1 })
+    .limit(3);
+  console.log(tours);
   res.status(200).render('home', {
     title: 'Overview',
     user,
+    tours,
   });
 });
 

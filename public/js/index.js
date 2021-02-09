@@ -11,25 +11,28 @@ const signupForm = document.querySelector('.form__signup');
 const cancelBtn = document.querySelector('.section__login--span');
 const tourHeader = document.querySelector('.tour__header');
 
-const homePage = document.querySelector('.home-header');
 const mapbox = document.getElementById('map');
 const book = document.querySelector('.bookNow__btn');
 
-if (homePage) {
+if (signupBtn) {
   // SIGNUP FORM
   signupBtn.addEventListener('click', (e) => {
     e.preventDefault();
     sectionLogin.classList.remove('hidden');
     signupForm.classList.remove('hidden');
   });
+}
 
+if (cancelBtn) {
   // CANCEL BUTTON
   cancelBtn.addEventListener('click', (e) => {
     sectionLogin.classList.add('hidden');
     signupForm.classList.add('hidden');
     loginForm.classList.add('hidden');
   });
+}
 
+if (loginBtn) {
   // LOGIN FORM
   loginBtn.addEventListener('click', (e) => {
     e.preventDefault();
