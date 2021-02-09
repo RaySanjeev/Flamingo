@@ -1,0 +1,47 @@
+.about-image {
+	&--composition {
+		position: relative;
+		backface-visibility: hidden;
+	}
+
+	&--pic {
+		position: absolute;
+		z-index: 1;
+		display: inline-block;
+		width: 50%;
+		box-shadow: 0 2rem 2rem rgba($color-black, 0.3);
+		outline-offset: 1.5rem;
+		backface-visibility: hidden;
+		transition: all 0.2s;
+		// image-rendering: -webkit-optimize-contrast;
+		// image-rendering: pixelated;
+	}
+
+	&--1 {
+		top: -2rem;
+		left: 7rem;
+	}
+	&--2 {
+		top: 3rem;
+		right: 3rem;
+	}
+	&--3 {
+		top: 14rem;
+		left: 14rem;
+	}
+
+	&--pic:hover {
+		z-index: 3;
+		transform: translateY(-0.5rem) scale(1.05);
+		outline: 1.5rem solid $color-primary-light;
+		box-shadow: 0 4rem 2rem rgba($color-black, 0.5);
+		// image-rendering: -webkit-optimize-contrast;
+		image-rendering: pixelated;
+	}
+
+	&--composition:hover &--pic:not(:hover) {
+		transform: scale(0.95);
+		// image-rendering: -webkit-optimize-contrast;
+		image-rendering: pixelated;
+	}
+}

@@ -1,0 +1,118 @@
+.form {
+  backdrop-filter: blur(10px);
+}
+
+.section__login {
+  &--span {
+    position: absolute;
+    top: 5rem;
+    right: 7rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  &--span:hover {
+    transform: translateY(-3px);
+  }
+
+  &--span:active {
+    transform: translateY(0);
+  }
+}
+
+.form {
+  padding: 2rem 0 2rem 4rem;
+  overflow: hidden;
+
+  &__login {
+    &--heading {
+      font-size: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    &--input {
+      display: block;
+      width: 80%;
+      padding: 1.5rem 3rem;
+      border: none;
+      border-radius: 3px;
+      border-bottom: 2px solid transparent;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      font-family: inherit;
+      font-weight: 400;
+      color: $color-grey;
+      letter-spacing: 1px;
+
+      &:focus {
+        outline: none;
+        border-bottom: 2px solid $color-tertiary;
+        box-shadow: 0 0.5rem 3rem rgba($color-black, 0.3);
+
+        &:invalid {
+          border-bottom: 2px solid $color-primary;
+        }
+      }
+
+      &::placeholder {
+        font-family: inherit;
+        color: $color-grey-dark;
+      }
+    }
+
+    &--label {
+      display: block;
+      margin-bottom: 2.5rem;
+      margin-left: 3rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      transition: all 0.4s;
+    }
+
+    &--input:placeholder-shown + &--label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4rem);
+    }
+
+    &--btn-1,
+    &--btn-2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      font-family: inherit;
+      color: $color-white;
+      letter-spacing: 2px;
+      background-color: $color-primary-dull;
+      padding: 1rem 7rem;
+      cursor: pointer;
+      border-radius: 3rem;
+      border: none;
+      box-shadow: 0 1.5rem 3rem rgba($color-black, 0.3);
+    }
+
+    &--btn-1:hover,
+    &--btn-2:hover {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.form__login--btn-1 {
+  width: 40%;
+}
+
+.signup__input {
+  padding: 1rem 3rem;
+}
+
+.signup__heading {
+  margin-bottom: 2rem;
+}
+
+.signup__label {
+  margin-bottom: 0;
+}

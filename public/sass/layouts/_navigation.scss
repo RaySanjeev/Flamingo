@@ -1,0 +1,110 @@
+.navigation {
+  // background-image: linear-gradient(
+  //   to right,
+  //   $color-primary-dull,
+  //   $color-primary
+  // );
+  // background-image: linear-gradient(to right, rgba($color-black, 1), rgba($color-black, 0.7));
+  background-color: $color-grey-dark-1;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    height: 3rem;
+    margin-left: 5rem;
+    align-self: center;
+    &--white {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    padding: 1rem;
+    margin-right: 2rem;
+
+    display: flex;
+  }
+
+  &__content:link,
+  &__content:visited {
+    align-self: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: $color-grey;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+
+  &__content:hover {
+    color: $color-grey-light;
+    transform: translateY(-0.2rem);
+  }
+  &__content:active {
+    transform: translateY(0);
+  }
+
+  &__content--signup,
+  &__content--logout {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-decoration: none;
+    background-color: $color-white;
+    color: $color-primary;
+    padding: 0.7rem 3rem;
+    border-radius: 5rem;
+    transition: all 0.2s;
+    transform: perspective(1px) translateZ(0) translateY(0) scale(1);
+    // backface-visibility: hidden;
+  }
+
+  &__content--signup:hover,
+  &__content--logout:hover {
+    transform: perspective(1px) translateZ(0) translateY(-0.2rem) scale(1.05);
+    backface-visibility: hidden;
+    // transform: scaleX(1.01);
+    // -webkit-font-smoothing: subpixel-antialiased;
+  }
+  &__content--signup:active,
+  &__content--logout:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+// .toursCombine__navigation,
+// .tour__navigation {
+//   padding: 1rem 3rem;
+//   display: flex;
+//   justify-content: space-between;
+//   background-color: $color-grey-dark-1;
+
+//   & .navigation__content {
+//     color: $color-grey-light-1;
+//   }
+//   & .navigation__content:hover {
+//     color: $color-white;
+//   }
+// }
+
+.navigation__content-tours--signUp {
+  color: $color-grey-dark-1;
+}
+
+.nav__user--image {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.nav__user--name {
+  text-transform: capitalize;
+  margin-left: 1rem;
+}

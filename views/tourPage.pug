@@ -1,0 +1,125 @@
+extends base
+
+block append head
+  script(src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js')
+  link(href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet') 
+
+block content
+  header.tour__header(data-image = `${tour.imageCover}`)
+    .text__container
+      h1.tour__header--heading
+        -const firstName = tour.name.split(' ').slice(0, 2).join(' ');
+        - const lastName = tour.name.split(' ')[2];
+        span.tour__header--heading-1 #{firstName}
+        span.tour__header--heading-2 #{lastName}
+      .tour__header--content
+        svg.tour__header--content-svg
+          use(xlink:href='/img/sprite.svg#icon-clock')
+        p.tour__header--content-para.tour__header--content-para-1 #{tour.duration} Days
+        svg.tour__header--content-svg
+          use(xlink:href='/img/sprite.svg#icon-location')
+        p.tour__header--content-para #{tour.startLocation.description}
+  section.section__info
+    .info__support
+      .info__support--block
+        h3.info__support--heading.mb-medium quick facts
+        .info__support--block-container
+          .info__support--content.mb-small
+            svg.info__support--content-svg
+              use(xlink:href='/img/sprite.svg#icon-calendar')
+            p.info__support--content-para.info__support--content-para-1 next date
+            -const options = { year: 'numeric', month: 'long' };
+            -const date = tour.startDates[0].toLocaleDateString('en-US', options)
+            p.info__support--content-para #{date}
+          .info__support--content.mb-small
+            svg.info__support--content-svg
+              use(xlink:href='/img/sprite.svg#icon-trending-up')
+            p.info__support--content-para.info__support--content-para-1 difficulty
+            p.info__support--content-para #{tour.difficulty}
+          .info__support--content.mb-small
+            svg.info__support--content-svg
+              use(xlink:href='/img/sprite.svg#icon-user')
+            p.info__support--content-para.info__support--content-para-1 participants
+            p.info__support--content-para #{tour.maxGroupSize} People
+          .info__support--content
+            svg.info__support--content-svg
+              use(xlink:href='/img/sprite.svg#icon-star')
+            p.info__support--content-para.info__support--content-para-1 rating
+            p.info__support--content-para #{tour.ratingsAverage}
+      .info__support--block.mt-medium
+        h3.info__support--heading.mb-medium your tour guides
+        .info__support--block-container
+        each guide in tour.guides
+          .info__support--content.mb-small
+            .info__support--content-img
+              img.info__support--content-img-container(src=`/img/users/${guide.photo}` alt='guide-image')
+            - const role = guide.role.startsWith('lead') ? 'LEAD GUIDE' : 'TOUR GUIDE'
+            p.info__support--content-para.info__support--content-para-1 #{role}
+            p.info__support--content-para #{guide.name}
+    .info__about
+      .info__about--container
+        h3.info__about--heading.mb-medium about #{tour.name}
+        - const description = tour.description.split('\n');
+        - const firstPara = description[0];
+        - const secondPara = description[1];
+        p.info__about--para.mb-medium
+          | #{firstPara}
+        p.info__about--para
+          | #{secondPara}
+  section.section__images
+    h2.section__images--heading.mb-medium some famous locations
+    .image__container
+      .image__layout
+        img.image__layout--slides(src='/img/combine/city-1.jpg' alt='city-image')
+        p.image__layout--caption Caption-1
+      .image__layout
+        img.image__layout--slides(src='/img/combine/city-2.webp' alt='city-image')
+        p.image__layout--caption Caption-2
+      .image__layout
+        img.image__layout--slides(src='/img/combine/city-3.webp' alt='city-image')
+        p.image__layout--caption Caption-3
+      .image__layout
+        img.image__layout--slides(src='/img/combine/city-4.webp' alt='city-image')
+        p.image__layout--caption Caption-4
+      .image__layout
+        img.image__layout--slides(src='/img/combine/city-5.webp' alt='city-image')
+        p.image__layout--caption Caption-5
+      //
+        <button class="carousel__btn carousel__btn--backward">
+        <svg class="carousel__btn--svg">
+        <use xlink:href="img/sprite.svg#icon-chevron-left"></use>
+        </svg>
+        </button>
+      //
+        <button class="carousel__btn carousel__btn--forward">
+        <svg class="carousel__btn--svg">
+        <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
+        </svg>
+        </button>
+  section.section__map
+    #map(data-locations=`${JSON.stringify(tour.locations)}`)
+  section.section__reviews
+    .reviews__container
+      each review in tour.reviews
+        .reviews__card
+          .reviews__card--info.mb-small
+            img.reviews__card--image(src=`/img/users/${review.user.photo}` alt='user-image')
+            h3.reviews__card--name #{review.user.name}
+          p.reviews__card--para.mb-small
+            | #{review.review}
+          .reviews__card--ratings
+            - const stars = [1, 2, 3, 4, 5]
+              each star in stars 
+                svg.reviews__card--svg(class = `reviews__card--star-${tour.ratingsAverage > star ? 'full' : 'null'}`)
+                  use(xlink:href='/img/sprite.svg#icon-star')
+  section.section__bookNow
+    .bookNow__container
+      .bookNow__image--container
+        img.bookNow__logo(src='/img/homeImage/logo-white.png' alt='logo-image')
+        img.bookNow__image--1(src='/img/combine/tour-2-1.jpg' alt='tour-image')
+        img.bookNow__image--2(src='/img/combine/tour-2-3.jpg' alt='tour-image')
+      .bookNow__content
+        h2.bookNow__heading what are you waiting for?
+        p.bookNow__para #{tour.duration} days.1 adventure.Infinite memories.Make it yours today!
+      a.bookNow__btn.btn(data-tour-id = `${tour._id}` href='#') BOOK TOUR NOW!
+

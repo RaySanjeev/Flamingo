@@ -1,0 +1,20 @@
+nav.navigation
+  .navigation__logo
+    img.navigation__logo--white(src='/img/homeImage/logo-white.png' alt='company-logo')
+  ul.navigation__list
+    li.navigation__item
+      a.navigation__content.navigation__content--home(href='/overview')  Home
+    li.navigation__item
+      a.navigation__content.navigation__content--gallery(href='#')  Gallery
+    if user
+      li.navigation__item
+        img.nav__user--image(src=`/img/users/${user.photo}` alt='user-image')
+        -const name = user.name.split(' ')[0]
+        a.navigation__content.nav__user--name(href='#') #{name}
+      li.navigation__item
+        a.navigation__content--logout(href='/logout')  Logout
+    else 
+      li.navigation__item
+        a.navigation__content.navigation__content--login(href='#')  Login
+      li.navigation__item
+        a.navigation__content--signup(href='#')  Sign Up for Free

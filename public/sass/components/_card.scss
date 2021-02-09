@@ -1,0 +1,303 @@
+.card {
+  height: 52rem;
+  position: relative;
+  &__side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 52rem;
+    width: 100%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.3);
+    border-radius: 3px;
+    backface-visibility: hidden;
+    perspective: 150rem;
+    overflow: hidden;
+    transition: all 1s;
+
+    &--front {
+      background: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+    }
+
+    &--back-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary
+      );
+    }
+    &--back-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+    }
+    &--back-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary
+      );
+    }
+
+    &--back {
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      align-content: center;
+      &-para {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: $color-white;
+        // text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &-1 {
+          align-self: end;
+          justify-self: center;
+          text-transform: uppercase;
+        }
+
+        &-2 {
+          align-self: start;
+          justify-self: center;
+        }
+      }
+
+      &-heading {
+        color: $color-white;
+        align-self: end;
+        justify-self: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-1 {
+          font-size: 8rem;
+          font-weight: 100;
+        }
+
+        &-2 {
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
+      }
+
+      &-btn:link,
+      &-btn:visited {
+        align-self: start;
+        justify-self: center;
+        display: inline-block;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 1.5rem 5rem;
+        background-color: $color-white;
+        box-shadow: 0 1.4rem 3rem rgba($color-black, 0.3);
+        transition: all 0.3s;
+      }
+
+      &-btn-1 {
+        color: $color-primary;
+      }
+
+      &-btn-2 {
+        color: $color-tertiary-dark;
+      }
+
+      &-btn-3 {
+        color: $color-secondary;
+      }
+
+      &-btn:hover {
+        transform: translateY(-0.5rem);
+        box-shadow: 0 2rem 4rem rgba($color-black, 0.5);
+      }
+
+      &-btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1.4rem 3rem rgba($color-black, 0.3);
+      }
+    }
+  }
+
+  &:hover .card__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover .card__side--back {
+    transform: rotateY(0);
+  }
+
+  &__image {
+    height: 23rem;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: soft-light;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    // &-1 {
+    // 	background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary),
+    // 		url(../img/homeImage/nat-5.jpg);
+    // }
+
+    // &-2 {
+    // 	background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),
+    // 		url(../img/homeImage/nat-6.jpg);
+    // }
+
+    // &-3 {
+    // 	background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary),
+    // 		url(../img/homeImage/nat-7.jpg);
+    // }
+  }
+
+  &__heading {
+    color: $color-white;
+    display: inline-block;
+
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+
+    &-primary {
+      position: absolute;
+      top: 13rem;
+      right: 2rem;
+      padding: 0.8rem 2rem;
+      border-radius: 3px;
+    }
+
+    &-secondary {
+      position: absolute;
+      top: 18rem;
+      right: 2rem;
+      padding: 0.8rem 2rem;
+      border-radius: 3px;
+    }
+
+    &-1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.7),
+        rgba($color-primary, 0.7)
+      );
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.7),
+        rgba($color-tertiary-dark, 0.7)
+      );
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.7),
+        rgba($color-secondary, 0.7)
+      );
+    }
+  }
+
+  &__details {
+    padding: 0 3rem;
+
+    &-block {
+      list-style: none;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr) 2fr;
+    }
+
+    &-list {
+      font-size: 1.5rem;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 2rem;
+      color: $color-grey;
+    }
+
+    &-list::after {
+      content: '';
+      display: block;
+      border: 1px solid $color-grey-light;
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+//  2 PAGE
+.card {
+  &__details {
+    &--tours {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    &--heading {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: $color-grey-dark-2;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    &--para {
+      font-size: 1.3rem;
+      font-weight: 300;
+      font-style: oblique;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__details--block {
+    display: flex;
+    &-svg {
+      height: 2rem;
+      width: 2rem;
+      fill: $color-primary;
+      margin-right: 1rem;
+    }
+    &-para {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+  }
+
+  &__bookNow {
+    width: 100%;
+    background-color: $color-grey-light;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+
+    &--starRating {
+      margin-right: 2rem;
+      &-full {
+        height: 1.7rem;
+        width: 1.7rem;
+        fill: $color-primary;
+      }
+      &-null {
+        height: 1.7rem;
+        width: 1.7rem;
+        fill: $color-grey-light-1;
+      }
+    }
+
+    &--rating,
+    &--ratingsNum {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: $color-grey-dark-2;
+    }
+  }
+}
