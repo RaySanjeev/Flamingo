@@ -1,0 +1,51 @@
+extends base
+
+block content
+  section.section__account
+    .navigation__menu
+      ul.user__menu
+        li.user__item
+          svg.user__item--svg
+            use(xlink:href='img/sprite1.svg#settings')
+          a.user__item--text.user__item--settings(href='#') settings
+        li.user__item
+          svg.user__item--svg
+            use(xlink:href='img/sprite1.svg#briefcase')
+          a.user__item--text.user__item--bookings(href='#') my bookings
+        li.user__item
+          svg.user__item--svg
+            use(xlink:href='img/sprite1.svg#star')
+          a.user__item--text.user__item--reviews(href='#') my reviews
+        li.user__item
+          svg.user__item--svg
+            use(xlink:href='img/sprite1.svg#credit-card')
+          a.user__item--text.user__item--ratings(href='#') billings
+    .account__info
+      h2.account__info--heading.mb-medium.mt-small
+        | update profile
+      form.account__info--form(action='#' enctype='multipart/form-data' method= 'POST')
+        .account__group
+          label.account__label(for='account__name') your name :
+          input#account__name.account__input(type='text' placeholder=`${user.name}`)
+        .account__group
+          label.account__label(for='account__email') your email :
+          input#account__email.account__input(type='email' placeholder=`${user.email}`)
+        .account__group
+          label.account__label(for='account__photo') your photo :
+          input#account__photo.account__info--file(type='file' accept='image/*')
+        .submit__group
+          input.account__update(type='submit' value='update')
+    .password__info
+      h2.mb-medium.mt-small update password
+      form.password__info--form(action='/api/v1/users/updatePassword' method='POST')
+        .password__group
+          label.account__label(for='prev__password ') current password
+          input#prev__password.account__input(type='password' placeholder='••••••••' required='' name='currentPassword')
+        .password__group
+          label.account__label(for='new__password ') new password
+          input#new__password.account__input(type='password' placeholder='••••••••' required='' name='password')
+        .password__group
+          label.account__label(for='passwordConfirm ') confirm password
+          input#passwordConfirm.account__input(type='password' placeholder='••••••••' required='' name='passwordConfirm')
+        .submit__group
+          input.account__update(type='submit' value='update password')

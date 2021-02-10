@@ -16,6 +16,8 @@ router
     viewController.renderHomePage
   );
 
+router.route('/me').get(authController.protect, viewController.renderAccount);
+
 router
   .route('/logout')
   .get(authController.logout, viewController.renderHomePage);

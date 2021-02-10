@@ -14,7 +14,9 @@ router.route('/resetPassword/:token').patch(authController.resetPassword);
 // PROTECT ALL USERS AFTER THIS MIDDLEWARE
 router.use(authController.protect);
 
-router.route('/updatePassword').patch(authController.updatePassword);
+router
+  .route('/updatePassword')
+  .post(authController.updatePassword, viewController.redirectAccount);
 router
   .route('/updateMe')
   .patch(
@@ -26,7 +28,7 @@ router.route('/deleteMe').delete(userController.deleteMe);
 router.route('/me').get(userController.getMe, userController.getUser);
 
 // RESTRICT ALL ROUTES AFTER THIS MIDDLEWARE
-router.use(authController.restrictTo('admin'));
+// router.use(authController.restrictTo('admin'));
 
 router.route('/').get(userController.getAllUsers);
 router

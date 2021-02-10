@@ -1,0 +1,215 @@
+.section__account {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: repeat(2, 1fr);
+  min-height: 90vh;
+  width: 100%;
+}
+
+.navigation__menu {
+  background-color: red;
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary
+  );
+}
+
+.account__info {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.password__info {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-grey-light;
+}
+
+.navigation__menu {
+  padding: 5rem 5rem;
+}
+
+.user__menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__item {
+  margin-bottom: 4rem;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 1rem 1.5rem rgba($color-black, 0.3);
+  transition: all 0.3s;
+
+  &--text {
+    width: 12rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  &--svg {
+    height: 2.5rem;
+    width: 2.5rem;
+    font-weight: 700;
+    fill: $color-white;
+    margin-right: 2rem;
+  }
+}
+
+.user__item:hover {
+  box-shadow: 0 1.5rem 3rem rgba($color-black, 0.3);
+  transform: translateY(-4px);
+  background-color: $color-white;
+}
+
+.user__item:hover .user__item--text {
+  color: $color-primary;
+}
+
+.user__item:hover .user__item--svg {
+  fill: $color-primary;
+}
+
+.user__item:active {
+  box-shadow: 0 1rem 1.5rem rgba($color-black, 0.3);
+  transform: translateY(0);
+}
+
+.account__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+
+  &--file::-webkit-file-upload-button {
+    border: none;
+    outline: none;
+    padding: 1rem;
+    margin-right: 2rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #e4e7eb;
+    outline: none;
+    color: $color-grey-dark;
+    cursor: pointer;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    transition: all 0.3s;
+  }
+
+  &--file::-webkit-file-upload-button:hover {
+    background-color: $color-primary-light;
+    color: #fff;
+  }
+
+  &--file::-webkit-file-upload-button:active {
+    background-color: $color-primary;
+    color: #fff;
+  }
+}
+
+.account__group,
+.password__group {
+  margin-bottom: 4rem;
+  display: flex;
+}
+
+.account__label {
+  width: 20rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  color: $color-grey-dark-1;
+}
+
+.account__input {
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: #e4e7eb;
+  color: $color-grey-dark-1;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+
+  &::placeholder {
+    font-family: inherit;
+    letter-spacing: 1px;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid $color-tertiary;
+    box-shadow: 0 0.5rem 2rem rgba($color-black, 0.3);
+
+    &:invalid {
+      border-bottom: 2px solid $color-primary;
+    }
+  }
+}
+
+.submit__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account__update {
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  min-width: 20rem;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary
+  );
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+  backface-visibility: hidden;
+  transition: all 0.3s;
+}
+
+.account__update:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1.5rem 3rem rgba($color-black, 0.4);
+}
+
+.account__update:active {
+  transform: translateY(0);
+  box-shadow: 0 1rem 2rem rgba($color-black, 0.3);
+}
+
+.password__info {
+}

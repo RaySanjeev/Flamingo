@@ -229,6 +229,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
+  console.log('sfsjbfkjsdkjfhskjhf');
   // GET THE USER
   const user = await User.findById(req.user._id).select('+password');
 
@@ -255,5 +256,5 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // LOG THE USER IN
-  createSendToken(user, 201, res);
+  createSendToken(user, 201, res, next);
 });

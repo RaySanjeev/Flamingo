@@ -19,6 +19,17 @@ exports.renderHomePage = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.renderAccount = (req, res, next) => {
+  res.status(200).render('account', {
+    title: 'ME',
+    user: req.user,
+  });
+};
+
+exports.redirectAccount = (req, res, next) => {
+  res.status(200).redirect('/me');
+};
+
 exports.renderTours = catchAsync(async (req, res, next) => {
   const tours = await Tour.find();
   res.status(200).render('tours', {

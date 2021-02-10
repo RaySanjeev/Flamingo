@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navigation">
+      <div class="navigation__logo">
+        <img
+          src="img/homeImage/logo-white.png"
+          class="navigation__logo--white"
+          alt="company-logo"
+        />
+      </div>
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> Home</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> About us</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> Gallery</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> Login</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__content--signUp"> Sign Up for Free</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="section__account">
+      <div class="navigation__menu">
+        <ul class="user__menu">
+          <li class="user__item">
+            <svg class="user__item--svg">
+              <use xlink:href="img/sprite1.svg#settings"></use>
+            </svg>
+            <a href="#" class="user__item--text user__item--settings"
+              >settings</a
+            >
+          </li>
+
+          <li class="user__item">
+            <svg class="user__item--svg">
+              <use xlink:href="img/sprite1.svg#briefcase"></use>
+            </svg>
+            <a href="#" class="user__item--text user__item--bookings"
+              >my bookings</a
+            >
+          </li>
+
+          <li class="user__item">
+            <svg class="user__item--svg">
+              <use xlink:href="img/sprite1.svg#star"></use>
+            </svg>
+            <a href="#" class="user__item--text user__item--reviews"
+              >my reviews</a
+            >
+          </li>
+
+          <li class="user__item">
+            <svg class="user__item--svg">
+              <use xlink:href="img/sprite1.svg#credit-card"></use>
+            </svg>
+            <a href="#" class="user__item--text user__item--ratings"
+              >billings</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="account__info">
+        <h2 class="account__info--heading mb-medium mt-small">
+          update profile
+        </h2>
+        <form action="#" class="account__info--form">
+          <div class="account__group">
+            <label for="account__name" class="account__label"
+              >your name :</label
+            >
+            <input
+              type="text"
+              class="account__input"
+              id="account__name"
+              placeholder="sanjeev ray"
+            />
+          </div>
+          <div class="account__group">
+            <label for="account__email" class="account__label"
+              >your email :</label
+            >
+            <input
+              type="email"
+              class="account__input"
+              id="account__email"
+              placeholder="sanjeevat1996@gmail.com"
+            />
+          </div>
+          <div class="account__group">
+            <label for="account__photo" class="account__label"
+              >your photo :</label
+            >
+            <input
+              type="file"
+              id="account__photo"
+              accept="image/*"
+              class="account__info--file"
+            />
+          </div>
+          <div class="submit__group">
+            <input type="submit" class="account__update" value="update" />
+          </div>
+        </form>
+      </div>
+      <div class="password__info">
+        <h2 class="mb-medium mt-small">update password</h2>
+        <form action="#" class="password__info--form">
+          <div class="password__group">
+            <label for="prev__password " class="account__label"
+              >current password</label
+            >
+            <input
+              id="prev__password"
+              type="password"
+              class="account__input"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="password__group">
+            <label for="new__password " class="account__label"
+              >new password</label
+            >
+            <input
+              id="new__password"
+              type="password"
+              class="account__input"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <div class="password__group">
+            <label for="passwordConfirm " class="account__label"
+              >confirm password</label
+            >
+            <input
+              id="passwordConfirm"
+              type="password"
+              class="account__input"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+          <div class="submit__group">
+            <input
+              type="submit"
+              class="account__update"
+              value="update password"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

@@ -10,7 +10,7 @@ nav.navigation
       li.navigation__item
         img.nav__user--image(src=`/img/users/${user.photo}` alt='user-image')
         -const name = user.name.split(' ')[0]
-        a.navigation__content.nav__user--name(href='#') #{name}
+        a.navigation__content.nav__user--name(href='/me') #{name}
       li.navigation__item
         a.navigation__content--logout(href='/logout')  Logout
     else 
