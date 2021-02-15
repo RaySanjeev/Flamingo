@@ -1,6 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const Tour = require('../models/tourModel');
+const Booking = require('../models/bookingModel');
 const catchAsync = require('../utils/catchAsync');
 // const AppError = require('../utils/appError');
 
@@ -31,5 +32,24 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: 'success',
     session,
+  });
+});
+
+exports.createBooking = catchAsync(async (req, res, next) => {
+  const booking = await Booking.create(req.body);
+
+  res.status(201).json({
+    status: 'success',
+    data: boooking,
+  });
+});
+
+exports.getAllBookings = catchAsync(async (req, res, next) => {
+  const bookings = await Booking.find({ user: req.user._id });
+
+  res.status(200).json({
+    status: 'success',
+    results: bookings.length,
+    data: bookings,
   });
 });

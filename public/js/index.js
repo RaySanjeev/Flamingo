@@ -55,6 +55,7 @@ if (mapbox) {
 if (book) {
   book.addEventListener('click', (e) => {
     e.preventDefault();
+    e.target.textContent = 'Processing...';
     const tourID = book.dataset.tourId;
     booknow(tourID);
   });

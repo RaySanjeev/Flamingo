@@ -282,13 +282,16 @@
   }
 
   &__btn:link,
-  &__btn:visited {
+  &__btn:visited,
+  &__btn {
     justify-self: center;
 
     color: $color-white;
     font-weight: 400;
     text-align: center;
     padding: 1.5rem 3rem;
+    cursor: pointer;
+    border: none;
     background-image: linear-gradient(
       to right,
       $color-primary-light,

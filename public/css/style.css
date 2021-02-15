@@ -1196,12 +1196,14 @@ h3 {
   font-size: 1.5rem;
   letter-spacing: 1px; }
 
-.bookNow__btn:link, .bookNow__btn:visited {
+.bookNow__btn:link, .bookNow__btn:visited, .bookNow__btn {
   justify-self: center;
   color: #fff;
   font-weight: 400;
   text-align: center;
   padding: 1.5rem 3rem;
+  cursor: pointer;
+  border: none;
   background-image: linear-gradient(to right, #ffb900, #ff7730);
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   transition: all 0.2s; }

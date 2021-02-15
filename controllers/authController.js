@@ -22,21 +22,14 @@ const createSendToken = (user, statusCode, res, next) => {
     ),
     // secure: true, // Send cookie only in https connection
     httpOnly: true, // Browser cannot modify the cookie
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
   };
-
-  if (process.env.NODE_ENV === 'production') cookieOptions.secure = true;
 
   // Send Cookie
   res.cookie('jwt', token, cookieOptions);
 
   user.password = undefined;
   next();
-  // res.status(statusCode).json({
-  //   status: 'success',
-  //   token,
-  //   data: {
-  //     user,
-  //   },
 };
 
 exports.signUp = catchAsync(async (req, res, next) => {
@@ -80,10 +73,6 @@ exports.logout = (req, res, next) => {
     httpOnly: true,
   });
 
-  // res.status(200).json({
-  //   status: 'success',
-  //   message: 'Logged Out',
-  // });
   next();
 };
 
