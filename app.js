@@ -64,12 +64,6 @@ app.use(
 // Logging input request
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-// Logging incoming cookie
-// app.use((req, res, next) => {
-//   console.log(req.cookies);
-//   next();
-// });
-
 // ROUTES
 
 app.use('/', viewRouter);

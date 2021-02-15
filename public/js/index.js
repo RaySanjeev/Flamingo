@@ -48,7 +48,6 @@ if (tourHeader) {
 
 if (mapbox) {
   const locations = JSON.parse(mapbox.dataset.locations);
-  console.log('fnksfkfkdjfhkjd');
   displayMap(locations);
 }
 

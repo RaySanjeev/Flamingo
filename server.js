@@ -27,7 +27,6 @@ mongoose
     console.log('Connected to the database');
   });
 
-console.log(process.env.NODE_ENV);
 const server = app.listen(`${process.env.PORT}`, () => {
   console.log(`The server is listening at port:${process.env.PORT}`);
 });

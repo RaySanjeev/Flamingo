@@ -4,16 +4,22 @@
   "description": "A Sample Tour Website",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass public/sass/main.scss public/css/style.css -w",
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "start:dev": "nodemon server.js",
     "start:prod": "SET NODE_ENV=production&&nodemon server.js",
+    "watch:sass": "node-sass public/sass/main.scss public/css/style.css -w",
+    "compile:sass": "node-sass public/sass/main.scss public/css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' public/css/style.comp.css -o public/css/style.prefix.css",
+    "compress:css": "node-sass public/css/style.prefix.css public/css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "Sanjeev Ray",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.2.4",
     "eslint": "^7.11.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.12.0",
@@ -25,6 +31,7 @@
     "ndb": "^1.1.5",
     "node-sass": "^4.14.1",
     "parcel-bundler": "^1.12.4",
+    "postcss-cli": "^8.3.1",
     "prettier": "^2.1.2"
   },
   "dependencies": {
@@ -45,6 +52,7 @@
     "nodemailer": "^6.4.14",
     "nodemailer-mailgun-transport": "^2.0.1",
     "nodemailer-sendgrid": "^1.0.3",
+    "npm-run-all": "^4.1.5",
     "pug": "^3.0.0",
     "sharp": "^0.26.2",
     "slugify": "^1.4.5",

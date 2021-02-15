@@ -218,7 +218,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
-  console.log('sfsjbfkjsdkjfhskjhf');
   // GET THE USER
   const user = await User.findById(req.user._id).select('+password');
 
