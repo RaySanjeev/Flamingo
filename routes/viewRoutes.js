@@ -5,9 +5,7 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-router
-  .route('/overview')
-  .get(authController.isLoggedIn, viewController.renderHomePage);
+router.route('/').get(authController.isLoggedIn, viewController.renderHomePage);
 router
   .route('/login')
   .post(
