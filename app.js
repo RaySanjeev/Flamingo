@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const tourRouter = require('./routes/tourRoutes');
 const viewRouter = require('./routes/viewRoutes');
@@ -17,6 +18,8 @@ const AppError = require('./utils/appError');
 const errorHandler = require('./controllers/errorcontroller');
 
 const app = express();
+
+app.enable('trust proxy');
 
 // SETTING PUG
 app.set('view engine', 'pug');
@@ -64,8 +67,9 @@ app.use(
 // Logging input request
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-// ROUTES
+app.use(compression());
 
+// ROUTES
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
