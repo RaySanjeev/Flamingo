@@ -13,7 +13,7 @@ const signToken = (id) => {
   });
 };
 
-const createSendToken = (user, statusCode, res, next) => {
+const createSendToken = (user, statusCode, res, req, next) => {
   const token = signToken(user._id);
 
   const cookieOptions = {
@@ -45,7 +45,7 @@ exports.signUp = catchAsync(async (req, res, next) => {
   await new Email(newUser, url).sendWelcome();
 
   req.user = newUser;
-  createSendToken(newUser, 201, res, next);
+  createSendToken(newUser, 201, res, req, next);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -64,7 +64,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
   // GENERATING AND SENDING TOKEN
   req.user = user;
-  createSendToken(user, 200, res, next);
+  createSendToken(user, 200, res, req, next);
 });
 
 exports.logout = (req, res, next) => {
@@ -214,7 +214,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   // UPDATE THE changedPasswordAt PROPERTY
 
   // LOG THE USER IN, SEND THE JWT
-  createSendToken(user, 200, res);
+  createSendToken(user, 200, res, req, next);
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
@@ -244,5 +244,5 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // LOG THE USER IN
-  createSendToken(user, 201, res, next);
+  createSendToken(user, 201, res, req, next);
 });

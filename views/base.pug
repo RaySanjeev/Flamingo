@@ -9,7 +9,7 @@ html(lang="en")
       link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
       title Flamingo | #{title}
 
-  body 
+  body(data-alert=`${alert ? alert : ''}`)
     // Navbar
     include _navbar
 

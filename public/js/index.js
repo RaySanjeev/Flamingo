@@ -2,6 +2,7 @@
 import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { booknow } from './stripe';
+import { showAlert } from './alert';
 
 const signupBtn = document.querySelector('.navigation__content--signup');
 const loginBtn = document.querySelector('.navigation__content--login');
@@ -59,3 +60,6 @@ if (book) {
     booknow(tourID);
   });
 }
+
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alertMessage) showAlert('success', alertMessage, 20);

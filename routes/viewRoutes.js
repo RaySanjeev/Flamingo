@@ -5,6 +5,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
+router.use(viewController.alerts);
+
 router.route('/').get(authController.isLoggedIn, viewController.renderHomePage);
 router
   .route('/login')
@@ -13,6 +15,10 @@ router
     authController.login,
     viewController.renderHomePage
   );
+
+router
+  .route('/my-tours')
+  .get(authController.protect, viewController.getMyTours);
 
 router.route('/me').get(authController.protect, viewController.renderAccount);
 
