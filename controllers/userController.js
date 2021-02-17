@@ -1,3 +1,4 @@
+const fs = require('fs');
 const multer = require('multer');
 const sharp = require('sharp');
 
@@ -15,6 +16,22 @@ const factory = require('./handlerFactory');
 //     cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
 //   }
 // });
+
+const rewriteResume = (req) => {
+  const resumeArray = fs.readdirSync('./public/img/users');
+
+  const el = resumeArray.find(
+    (el) => String(el.split('-')[1]) === String(req.user._id)
+  );
+  console.log(el);
+  if (el) {
+    fs.unlink(`./public/img/users/${el}`, function (err) {
+      if (err) console.log(err);
+      console.log('File deleted');
+    });
+  }
+};
+
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
@@ -35,6 +52,7 @@ exports.uploadUserPhoto = upload.single('photo');
 exports.imageProcessingUser = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
+  rewriteResume(req);
   req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
@@ -67,6 +85,8 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 
   // FILTER req.body FROM THE UNWANTED FIELDS
   const filteredObj = filter(req.body, 'name', 'email');
+  if (filteredObj.email === '') filteredObj.email = req.user.email;
+  if (filteredObj.name === '') filteredObj.name = req.user.name;
   if (req.file) filteredObj.photo = req.file.filename;
   // UPDATE USER DOCUMENT
   const updatedUser = await User.findByIdAndUpdate(req.user._id, filteredObj, {
@@ -74,12 +94,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     runValidators: true,
   });
 
-  res.status(200).json({
-    status: 'success',
-    data: {
-      user: updatedUser,
-    },
-  });
+  res.redirect('/me');
 });
 
 exports.deleteMe = catchAsync(async (req, res, next) => {

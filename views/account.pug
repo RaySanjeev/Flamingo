@@ -23,16 +23,16 @@ block content
     .account__info
       h2.account__info--heading.mb-medium.mt-small
         | update profile
-      form.account__info--form(action='#' enctype='multipart/form-data' method= 'POST')
+      form.account__info--form(action='/api/v1/users/updateMe' enctype='multipart/form-data' method= 'POST')
         .account__group
           label.account__label(for='account__name') your name :
-          input#account__name.account__input(type='text' placeholder=`${user.name}`)
+          input#account__name.account__input(type='text' placeholder=`${user.name}` name= 'name')
         .account__group
           label.account__label(for='account__email') your email :
-          input#account__email.account__input(type='email' placeholder=`${user.email}`)
+          input#account__email.account__input(type='email' placeholder=`${user.email}` name= 'email')
         .account__group
           label.account__label(for='account__photo') your photo :
-          input#account__photo.account__info--file(type='file' accept='image/*')
+          input#account__photo.account__info--file(type='file' accept='image/*' name='photo')
         .submit__group
           input.account__update(type='submit' value='update')
     .password__info

@@ -45,7 +45,7 @@ app.post(
 
 // Adding incoming request data to the req.body
 app.use(express.json({ limit: '10kb' })); // JSON Parser
-app.use(express.urlencoded({ extended: true, limit: '10kb' })); // Form parser
+app.use(express.urlencoded({ extended: true })); // Form parser
 app.use(cookieParser()); // Cookie Parser
 
 // Data sanitisation against NoSQL query injection

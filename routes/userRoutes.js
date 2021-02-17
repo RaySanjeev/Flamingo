@@ -19,7 +19,7 @@ router
   .post(authController.updatePassword, viewController.redirectAccount);
 router
   .route('/updateMe')
-  .patch(
+  .post(
     userController.uploadUserPhoto,
     userController.imageProcessingUser,
     userController.updateMe
