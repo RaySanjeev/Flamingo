@@ -29,9 +29,6 @@ app.set('views', path.join(__dirname, 'views'));
 // SERVING STATIC FILES
 app.use(express.static(path.join(__dirname, 'public')));
 
-// GLOBAL MIDDLEWARES
-// app.use(helmet());
-
 // Rate limiter
 const limiter = rateLimit({
   max: 300,
