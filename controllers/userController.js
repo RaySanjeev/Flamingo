@@ -17,19 +17,21 @@ const factory = require('./handlerFactory');
 //   }
 // });
 
-const rewriteResume = (req) => {
-  const resumeArray = fs.readdirSync('./public/img/users');
-
-  const el = resumeArray.find(
-    (el) => String(el.split('-')[1]) === String(req.user._id)
-  );
-  console.log(el);
-  if (el) {
-    fs.unlink(`./public/img/users/${el}`, function (err) {
-      if (err) console.log(err);
-      console.log('File deleted');
-    });
-  }
+const updateImageName = async (req) => {
+  await fs.readdir('./public/img/users', (err, imagesArray) => {
+    if (err) console.log('File not found');
+    else {
+      const el = imagesArray.find(
+        (el) => String(el.split('-')[1]) === String(req.user._id)
+      );
+      if (el) {
+        fs.unlink(`./public/img/users/${el}`, function (err) {
+          if (err) console.log(err);
+          console.log('File deleted');
+        });
+      }
+    }
+  });
 };
 
 const multerStorage = multer.memoryStorage();
@@ -52,7 +54,7 @@ exports.uploadUserPhoto = upload.single('photo');
 exports.imageProcessingUser = catchAsync(async (req, res, next) => {
   if (!req.file) return next();
 
-  rewriteResume(req);
+  await updateImageName(req);
   req.file.filename = `user-${req.user.id}-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
