@@ -13,7 +13,7 @@ const cancelBtn = document.querySelector('.section__login--span');
 const tourHeader = document.querySelector('.tour__header');
 
 const mapbox = document.getElementById('map');
-const book = document.querySelector('.bookNow__btn');
+const book = document.querySelector('.book_tour');
 
 if (signupBtn) {
   // SIGNUP FORM
@@ -42,6 +42,16 @@ if (loginBtn) {
   });
 }
 
+window.addEventListener('click', (e) => {
+  if (e.target === loginBtn) {
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      sectionLogin.classList.remove('hidden');
+      loginForm.classList.remove('hidden');
+    });
+  }
+});
+
 if (tourHeader) {
   const image = tourHeader.dataset.image;
   tourHeader.style.backgroundImage = `url(/img/combine/${image})`;
@@ -62,4 +72,8 @@ if (book) {
 }
 
 const alertMessage = document.querySelector('body').dataset.alert;
-if (alertMessage) showAlert('success', alertMessage);
+if (alertMessage) {
+  const message = alertMessage.split('/');
+  console.log(message);
+  showAlert(message[0], message[1]);
+}

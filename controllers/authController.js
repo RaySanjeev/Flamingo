@@ -60,7 +60,8 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // CHECK FOR USER AND WRONG PASSWORD
   if (!user || !(await user.correctPassword(password, user.password))) {
-    return next(new AppError('Please provide a valid email or password', 401));
+    // return next(new AppError('Please provide a valid email or password', 401));
+    return res.redirect('/?alert=userValidationFailed');
   }
   // GENERATING AND SENDING TOKEN
   req.user = user;

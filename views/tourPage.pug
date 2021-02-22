@@ -5,6 +5,7 @@ block append head
   link(href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet') 
 
 block content
+  include _signIn
   header.tour__header(data-image = `${tour.imageCover}`)
     .text__container
       h1.tour__header--heading
@@ -66,36 +67,18 @@ block content
           | #{firstPara}
         p.info__about--para
           | #{secondPara}
+
   section.section__images
     h2.section__images--heading.mb-medium some famous locations
-    .image__container
-      .image__layout
-        img.image__layout--slides(src='/img/combine/city-1.jpg' alt='city-image')
-        p.image__layout--caption Caption-1
-      .image__layout
-        img.image__layout--slides(src='/img/combine/city-2.webp' alt='city-image')
-        p.image__layout--caption Caption-2
-      .image__layout
-        img.image__layout--slides(src='/img/combine/city-3.webp' alt='city-image')
-        p.image__layout--caption Caption-3
-      .image__layout
-        img.image__layout--slides(src='/img/combine/city-4.webp' alt='city-image')
-        p.image__layout--caption Caption-4
-      .image__layout
-        img.image__layout--slides(src='/img/combine/city-5.webp' alt='city-image')
-        p.image__layout--caption Caption-5
-      //
-        <button class="carousel__btn carousel__btn--backward">
-        <svg class="carousel__btn--svg">
-        <use xlink:href="img/sprite.svg#icon-chevron-left"></use>
-        </svg>
-        </button>
-      //
-        <button class="carousel__btn carousel__btn--forward">
-        <svg class="carousel__btn--svg">
-        <use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-        </svg>
-        </button>
+    #slider
+      input#s1(type='radio' name='slider')
+      input#s2(type='radio' name='slider' checked='')
+      input#s3(type='radio' name='slider')
+      - let i = 1;
+      each image in tour.images
+        label(for=`s${i}` id=`slide${i++}`)
+          img(src=`/img/combine/${image}` height='100%' width='100%')
+      
   section.section__map
     #map(data-locations=`${JSON.stringify(tour.locations)}`)
   section.section__reviews
@@ -112,14 +95,19 @@ block content
               each star in stars 
                 svg.reviews__card--svg(class = `reviews__card--star-${tour.ratingsAverage > star ? 'full' : 'null'}`)
                   use(xlink:href='/img/sprite.svg#icon-star')
+
   section.section__bookNow
     .bookNow__container
       .bookNow__image--container
-        img.bookNow__logo(src='/img/homeImage/logo-white.png' alt='logo-image')
+        img.bookNow__logo(src=`/img/homeImage/logo-white.png` alt='logo-image')
         img.bookNow__image--1(src='/img/combine/tour-2-1.jpg' alt='tour-image')
         img.bookNow__image--2(src='/img/combine/tour-2-3.jpg' alt='tour-image')
       .bookNow__content
         h2.bookNow__heading what are you waiting for?
         p.bookNow__para #{tour.duration} days.1 adventure.Infinite memories.Make it yours today!
-      button.bookNow__btn.btn(data-tour-id = `${tour._id}` href='#') BOOK TOUR NOW!
-  include _signIn
+      if(user)
+        button.bookNow__btn.btn.book_tour(data-tour-id = `${tour._id}`) BOOK TOUR NOW!
+      else
+        //- a.navigation__content.navigation__content--login(href='#')  Login
+        btn.navigation__content--login.btn(href= '#navbar') LOGIN TO BOOK!
+  

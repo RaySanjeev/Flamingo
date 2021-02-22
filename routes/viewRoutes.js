@@ -37,4 +37,5 @@ router
 router
   .route('/tours/:slug')
   .get(authController.isLoggedIn, viewController.renderTourPage);
+
 module.exports = router;

@@ -1,480 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="css/style.css" />
-		<link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-		<title>MyOwn | The Sea Explorer</title>
-	</head>
-	<body>
-		<nav class="tour__navigation">
-			<div class="navigation__logo">
-				<img src="img/homeImage/logo-white.png" class="navigation__logo--white" alt="company-logo" />
-			</div>
-			<a href="http://127.0.0.1:5501/public/toursCombine.html" class="navigation__content"
-				>&larr;&nbsp;All tours</a
-			>
-			<ul class="navigation__list">
-				<li class="navigation__item">
-					<a href="http://127.0.0.1:5501/public/home.html" class="navigation__content"> Home</a>
-				</li>
-				<!-- <li class="navigation__item"><a href="#" class="navigation__content"> About us</a></li> -->
-				<li class="navigation__item">
-					<a href="#" class="navigation__content"> Gallery</a>
-				</li>
-				<li class="navigation__item">
-					<a href="#" class="navigation__content"> Login</a>
-				</li>
-				<li class="navigation__item">
-					<a
-						href="#"
-						class="tours__navigation--content navigation__content--signUp navigation__content-tours--signUp"
-					>
-						Sign Up</a
-					>
-				</li>
-			</ul>
-		</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <title>MyOwn | The Sea Explorer</title>
+  </head>
+  <body>
+    <nav class="tour__navigation">
+      <div class="navigation__logo">
+        <img
+          src="img/homeImage/logo-white.png"
+          class="navigation__logo--white"
+          alt="company-logo"
+        />
+      </div>
+      <a
+        href="http://127.0.0.1:5501/public/toursCombine.html"
+        class="navigation__content"
+        >&larr;&nbsp;All tours</a
+      >
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <a
+            href="http://127.0.0.1:5501/public/home.html"
+            class="navigation__content"
+          >
+            Home</a
+          >
+        </li>
+        <!-- <li class="navigation__item"><a href="#" class="navigation__content"> About us</a></li> -->
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> Gallery</a>
+        </li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__content"> Login</a>
+        </li>
+        <li class="navigation__item">
+          <a
+            href="#"
+            class="tours__navigation--content navigation__content--signUp navigation__content-tours--signUp"
+          >
+            Sign Up</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-		<header class="tour__header">
-			<h1 class="tour__header--heading">
-				<span class="tour__header--heading-1">the city</span>
-				<span class="tour__header--heading-2">wanderer</span>
-			</h1>
+    <header class="tour__header">
+      <h1 class="tour__header--heading">
+        <span class="tour__header--heading-1">the city</span>
+        <span class="tour__header--heading-2">wanderer</span>
+      </h1>
 
-			<div class="tour__header--content">
-				<svg class="tour__header--content-svg">
-					<use xlink:href="img/sprite.svg#icon-clock"></use>
-				</svg>
-				<p class="tour__header--content-para tour__header--content-para-1">9 Days</p>
-				<svg class="tour__header--content-svg">
-					<use xlink:href="img/sprite.svg#icon-location"></use>
-				</svg>
-				<p class="tour__header--content-para">NYC, USA</p>
-			</div>
-		</header>
+      <div class="tour__header--content">
+        <svg class="tour__header--content-svg">
+          <use xlink:href="img/sprite.svg#icon-clock"></use>
+        </svg>
+        <p class="tour__header--content-para tour__header--content-para-1">
+          9 Days
+        </p>
+        <svg class="tour__header--content-svg">
+          <use xlink:href="img/sprite.svg#icon-location"></use>
+        </svg>
+        <p class="tour__header--content-para">NYC, USA</p>
+      </div>
+    </header>
 
-		<section class="section__info">
-			<div class="info__support">
-				<div class="info__support--block">
-					<h3 class="info__support--heading mb-medium">quick facts</h3>
-					<div class="info__support--block-container">
-						<div class="info__support--content mb-small">
-							<svg class="info__support--content-svg">
-								<use xlink:href="img/sprite.svg#icon-calendar"></use>
-							</svg>
-							<p class="info__support--content-para info__support--content-para-1">next date</p>
-							<p class="info__support--content-para">March 2021</p>
-						</div>
-						<div class="info__support--content mb-small">
-							<svg class="info__support--content-svg">
-								<use xlink:href="img/sprite.svg#icon-trending-up"></use>
-							</svg>
-							<p class="info__support--content-para info__support--content-para-1">difficulty</p>
-							<p class="info__support--content-para">Medium</p>
-						</div>
-						<div class="info__support--content mb-small">
-							<svg class="info__support--content-svg">
-								<use xlink:href="img/sprite.svg#icon-user"></use>
-							</svg>
-							<p class="info__support--content-para info__support--content-para-1">participants</p>
-							<p class="info__support--content-para">20 People</p>
-						</div>
-						<div class="info__support--content">
-							<svg class="info__support--content-svg">
-								<use xlink:href="img/sprite.svg#icon-star"></use>
-							</svg>
-							<p class="info__support--content-para info__support--content-para-1">rating</p>
-							<p class="info__support--content-para">4.8</p>
-						</div>
-					</div>
-				</div>
+    <section class="section__info">
+      <div class="info__support">
+        <div class="info__support--block">
+          <h3 class="info__support--heading mb-medium">quick facts</h3>
+          <div class="info__support--block-container">
+            <div class="info__support--content mb-small">
+              <svg class="info__support--content-svg">
+                <use xlink:href="img/sprite.svg#icon-calendar"></use>
+              </svg>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                next date
+              </p>
+              <p class="info__support--content-para">March 2021</p>
+            </div>
+            <div class="info__support--content mb-small">
+              <svg class="info__support--content-svg">
+                <use xlink:href="img/sprite.svg#icon-trending-up"></use>
+              </svg>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                difficulty
+              </p>
+              <p class="info__support--content-para">Medium</p>
+            </div>
+            <div class="info__support--content mb-small">
+              <svg class="info__support--content-svg">
+                <use xlink:href="img/sprite.svg#icon-user"></use>
+              </svg>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                participants
+              </p>
+              <p class="info__support--content-para">20 People</p>
+            </div>
+            <div class="info__support--content">
+              <svg class="info__support--content-svg">
+                <use xlink:href="img/sprite.svg#icon-star"></use>
+              </svg>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                rating
+              </p>
+              <p class="info__support--content-para">4.8</p>
+            </div>
+          </div>
+        </div>
 
-				<div class="info__support--block mt-medium">
-					<h3 class="info__support--heading mb-medium">your tour guides</h3>
-					<div class="info__support--block-container">
-						<div class="info__support--content mb-small">
-							<div class="info__support--content-img">
-								<img
-									class="info__support--content-img-container"
-									src="./img/users/user-2.jpg"
-									alt="guide-image"
-								/>
-							</div>
-							<p class="info__support--content-para info__support--content-para-1">lead guide</p>
-							<p class="info__support--content-para">Sonakshi Ray</p>
-						</div>
-						<div class="info__support--content mb-small">
-							<div class="info__support--content-img">
-								<img
-									class="info__support--content-img-container"
-									src="./img/users/user-5.jpg"
-									alt="guide-image"
-								/>
-							</div>
-							<p class="info__support--content-para info__support--content-para-1">tour guide</p>
-							<p class="info__support--content-para">Aryan Ray</p>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div class="info__support--block mt-medium">
+          <h3 class="info__support--heading mb-medium">your tour guides</h3>
+          <div class="info__support--block-container">
+            <div class="info__support--content mb-small">
+              <div class="info__support--content-img">
+                <img
+                  class="info__support--content-img-container"
+                  src="./img/users/user-2.jpg"
+                  alt="guide-image"
+                />
+              </div>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                lead guide
+              </p>
+              <p class="info__support--content-para">Sonakshi Ray</p>
+            </div>
+            <div class="info__support--content mb-small">
+              <div class="info__support--content-img">
+                <img
+                  class="info__support--content-img-container"
+                  src="./img/users/user-5.jpg"
+                  alt="guide-image"
+                />
+              </div>
+              <p
+                class="info__support--content-para info__support--content-para-1"
+              >
+                tour guide
+              </p>
+              <p class="info__support--content-para">Aryan Ray</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<div class="info__about">
-				<div class="info__about--container">
-					<h3 class="info__about--heading mb-medium">about the city wanderer tour</h3>
-					<p class="info__about--para mb-medium">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, eveniet recusandae.
-						Cupiditate libero labore dolorum molestias est voluptas cum dolore perspiciatis! Nobis
-						soluta officiis inventore laborum, dolor vitae cumque a!
-					</p>
-					<p class="info__about--para">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo debitis atque blanditiis
-						consequatur delectus eveniet? Ad fuga cupiditate in vitae.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="section__images">
-			<h2 class="section__images--heading mb-medium">some famous locations</h2>
-			<div class="image__container">
-				<div class="image__layout">
-					<img src="./img/combine/city-1.jpg" alt="city-image" class="image__layout--slides" />
-					<p class="image__layout--caption">Caption-1</p>
-				</div>
-				<div class="image__layout">
-					<img src="./img/combine/city-2.webp" alt="city-image" class="image__layout--slides" />
-					<p class="image__layout--caption">Caption-2</p>
-				</div>
-				<div class="image__layout">
-					<img src="./img/combine/city-3.webp" alt="city-image" class="image__layout--slides" />
-					<p class="image__layout--caption">Caption-3</p>
-				</div>
-				<div class="image__layout">
-					<img src="./img/combine/city-4.webp" alt="city-image" class="image__layout--slides" />
-					<p class="image__layout--caption">Caption-4</p>
-				</div>
-				<div class="image__layout">
-					<img src="./img/combine/city-5.webp" alt="city-image" class="image__layout--slides" />
-					<p class="image__layout--caption">Caption-5</p>
-				</div>
+      <div class="info__about">
+        <div class="info__about--container">
+          <h3 class="info__about--heading mb-medium">
+            about the city wanderer tour
+          </h3>
+          <p class="info__about--para mb-medium">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam,
+            eveniet recusandae. Cupiditate libero labore dolorum molestias est
+            voluptas cum dolore perspiciatis! Nobis soluta officiis inventore
+            laborum, dolor vitae cumque a!
+          </p>
+          <p class="info__about--para">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo debitis
+            atque blanditiis consequatur delectus eveniet? Ad fuga cupiditate in
+            vitae.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="section__images">
+      <h2 class="section__images--heading mb-medium">some famous locations</h2>
 
-				<!-- <button class="carousel__btn carousel__btn--backward">
-					<svg class="carousel__btn--svg">
-						<use xlink:href="img/sprite.svg#icon-chevron-left"></use>
-					</svg>
-				</button> -->
-				<!-- <button class="carousel__btn carousel__btn--forward">
-					<svg class="carousel__btn--svg">
-						<use xlink:href="img/sprite.svg#icon-chevron-right"></use>
-					</svg>
-				</button> -->
-			</div>
-		</section>
+      <div id="slider">
+        <input type="radio" name="slider" id="s1" />
+        <input type="radio" name="slider" id="s2" checked />
+        <input type="radio" name="slider" id="s3" />
 
-		<section class="section__map"></section>
+        <label for="s1" id="slide1">
+          <img src="./img/combine/tour-1-1.jpg" height="100%" width="100%" />
+        </label>
+        <label for="s2" id="slide2">
+          <img src="./img/combine/tour-1-2.jpg" height="100%" width="100%" />
+        </label>
+        <label for="s3" id="slide3">
+          <img src="./img/combine/tour-1-3.jpg" height="100%" width="100%" />
+        </label>
+      </div>
+    </section>
 
-		<section class="section__reviews">
-			<div class="reviews__container">
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-1.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-2.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-3.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-4.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-5.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-6.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-				<div class="reviews__card">
-					<div class="reviews__card--info mb-small">
-						<img src="./img/users/user-7.jpg" alt="user-image" class="reviews__card--image" />
-						<h3 class="reviews__card--name">Angelina jolie</h3>
-					</div>
-					<p class="reviews__card--para mb-small">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta quam labore laborum? Rerum,
-						quod aspernatur?
-					</p>
-					<div class="reviews__card--ratings">
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-full">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-						<svg class="reviews__card--svg reviews__card--star-null">
-							<use xlink:href="img/sprite.svg#icon-star"></use>
-						</svg>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="section__map"></section>
 
-		<section class="section__bookNow">
-			<div class="bookNow__container">
-				<div class="bookNow__image--container">
-					<img src="./img/homeImage/logo-white.png" alt="logo-image" class="bookNow__logo" />
-					<img src="./img/combine/tour-2-1.jpg" alt="" class="bookNow__image--1" />
-					<img src="./img/combine/tour-2-3.jpg" alt="" class="bookNow__image--2" />
-				</div>
-				<div class="bookNow__content">
-					<h2 class="bookNow__heading">what are you waiting for?</h2>
-					<p class="bookNow__para">9 days.1 adventure.Infinite memories.Make it yours today!</p>
-				</div>
-				<a href="#" class="bookNow__btn btn">BOOK TOUR NOW!</a>
-			</div>
-		</section>
+    <section class="section__reviews">
+      <div class="reviews__container">
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-1.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-2.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-3.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-4.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-5.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-6.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="reviews__card">
+          <div class="reviews__card--info mb-small">
+            <img
+              src="./img/users/user-7.jpg"
+              alt="user-image"
+              class="reviews__card--image"
+            />
+            <h3 class="reviews__card--name">Angelina jolie</h3>
+          </div>
+          <p class="reviews__card--para mb-small">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
+            quam labore laborum? Rerum, quod aspernatur?
+          </p>
+          <div class="reviews__card--ratings">
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-full">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="reviews__card--svg reviews__card--star-null">
+              <use xlink:href="img/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="section__footer">
-			<div class="section__footer--grid">
-				<div class="footer__logo-box">
-					<img src="img/homeImage/logo-white.png" class="footer__logo-box--logo" alt="company-logo" />
-					<p class="footer__logo-box--para">&copy; Sanjeev and industries.</p>
-					<p class="footer__logo-box--para">All rights reserved.</p>
-				</div>
-				<div class="explore">
-					<h4 class="footer__heading">Explore</h4>
-					<ul class="footer__list">
-						<li class="footer__item"><a href="#" class="footer__item--content">Home</a></li>
-						<li class="footer__item"><a href="#" class="footer__item--content">About</a></li>
-						<li class="footer__item">
-							<a href="http://127.0.0.1:5501/public/toursCombine.html" class="footer__item--content"
-								>Discover Tours</a
-							>
-						</li>
-						<li class="footer__item"><a href="#" class="footer__item--content">Careers</a></li>
-					</ul>
-				</div>
-				<div class="follow">
-					<h4 class="footer__heading">Follow</h4>
-					<ul class="footer__list">
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg">
-								<use xlink:href="img/sprite.svg#icon-facebook"></use>
-							</svg>
-							<a
-								class="footer__item--content"
-								href="https://www.facebook.com/profile.php?id=100004895926912"
-								target="_blank"
-								>Facebook</a
-							>
-						</li>
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg">
-								<use xlink:href="img/sprite.svg#icon-twitter"></use>
-							</svg>
-							<a class="footer__item--content" href="#">Twitter</a>
-						</li>
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg"><use xlink:href="img/sprite.svg#icon-youtube"></use></svg>
-							<a class="footer__item--content" href="#">Youtube</a>
-						</li>
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg">
-								<use xlink:href="img/sprite.svg#icon-instagram-with-circle"></use>
-							</svg>
-							<a
-								class="footer__item--content"
-								href="https://www.instagram.com/sanjeev_ray62/"
-								target="_blank"
-								>Instagram</a
-							>
-						</li>
-					</ul>
-				</div>
-				<div class="contact">
-					<h4 class="footer__heading">Contact Us</h4>
-					<ul class="contact footer__list">
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg">
-								<use xlink:href="img/sprite.svg#icon-mail"></use>
-							</svg>
-							<a class="footer__item--content" href="#">Email Us</a>
-						</li>
-						<li class="footer__item footer__item--svg">
-							<svg class="footer__svg">
-								<use xlink:href="img/sprite.svg#icon-old-phone"></use>
-							</svg>
-							<a class="footer__item--content" href="#">Call Us</a>
-						</li>
-					</ul>
-				</div>
-				<div class="visit">
-					<h5 class="footer__heading">Visit Us</h5>
-					<p class="footer__item">@ My dream location.</p>
-					<p class="footer__item">Around the globe.</p>
-				</div>
-				<div class="legal">
-					<h4 class="footer__heading">Legal</h4>
+    <section class="section__bookNow">
+      <div class="bookNow__container">
+        <div class="bookNow__image--container">
+          <img
+            src="./img/homeImage/logo-white.png"
+            alt="logo-image"
+            class="bookNow__logo"
+          />
+          <img
+            src="./img/combine/tour-2-1.jpg"
+            alt=""
+            class="bookNow__image--1"
+          />
+          <img
+            src="./img/combine/tour-2-3.jpg"
+            alt=""
+            class="bookNow__image--2"
+          />
+        </div>
+        <div class="bookNow__content">
+          <h2 class="bookNow__heading">what are you waiting for?</h2>
+          <p class="bookNow__para">
+            9 days.1 adventure.Infinite memories.Make it yours today!
+          </p>
+        </div>
+        <a href="#" class="bookNow__btn btn">BOOK TOUR NOW!</a>
+      </div>
+    </section>
 
-					<ul class="footer__list">
-						<li class="footer__item"><a class="footer__item--content" href="#">Terms</a></li>
-						<li class="footer__item"><a class="footer__item--content" href="#">Privacy</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	</body>
+    <section class="section__footer">
+      <div class="section__footer--grid">
+        <div class="footer__logo-box">
+          <img
+            src="img/homeImage/logo-white.png"
+            class="footer__logo-box--logo"
+            alt="company-logo"
+          />
+          <p class="footer__logo-box--para">&copy; Sanjeev and industries.</p>
+          <p class="footer__logo-box--para">All rights reserved.</p>
+        </div>
+        <div class="explore">
+          <h4 class="footer__heading">Explore</h4>
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a href="#" class="footer__item--content">Home</a>
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__item--content">About</a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="http://127.0.0.1:5501/public/toursCombine.html"
+                class="footer__item--content"
+                >Discover Tours</a
+              >
+            </li>
+            <li class="footer__item">
+              <a href="#" class="footer__item--content">Careers</a>
+            </li>
+          </ul>
+        </div>
+        <div class="follow">
+          <h4 class="footer__heading">Follow</h4>
+          <ul class="footer__list">
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use xlink:href="img/sprite.svg#icon-facebook"></use>
+              </svg>
+              <a
+                class="footer__item--content"
+                href="https://www.facebook.com/profile.php?id=100004895926912"
+                target="_blank"
+                >Facebook</a
+              >
+            </li>
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use xlink:href="img/sprite.svg#icon-twitter"></use>
+              </svg>
+              <a class="footer__item--content" href="#">Twitter</a>
+            </li>
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use xlink:href="img/sprite.svg#icon-youtube"></use>
+              </svg>
+              <a class="footer__item--content" href="#">Youtube</a>
+            </li>
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use
+                  xlink:href="img/sprite.svg#icon-instagram-with-circle"
+                ></use>
+              </svg>
+              <a
+                class="footer__item--content"
+                href="https://www.instagram.com/sanjeev_ray62/"
+                target="_blank"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h4 class="footer__heading">Contact Us</h4>
+          <ul class="contact footer__list">
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use xlink:href="img/sprite.svg#icon-mail"></use>
+              </svg>
+              <a class="footer__item--content" href="#">Email Us</a>
+            </li>
+            <li class="footer__item footer__item--svg">
+              <svg class="footer__svg">
+                <use xlink:href="img/sprite.svg#icon-old-phone"></use>
+              </svg>
+              <a class="footer__item--content" href="#">Call Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="visit">
+          <h5 class="footer__heading">Visit Us</h5>
+          <p class="footer__item">@ My dream location.</p>
+          <p class="footer__item">Around the globe.</p>
+        </div>
+        <div class="legal">
+          <h4 class="footer__heading">Legal</h4>
+
+          <ul class="footer__list">
+            <li class="footer__item">
+              <a class="footer__item--content" href="#">Terms</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__item--content" href="#">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
